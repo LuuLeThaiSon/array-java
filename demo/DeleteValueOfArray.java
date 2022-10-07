@@ -29,19 +29,27 @@ public class DeleteValueOfArray {
     }
 
     public static void delArray(int[] array, int value) {
-        int[] newArray;
-        newArray = new  int[array.length - 1];
+        int[] newArray1;
+        int count = 0;
+        int index = 0;
+        newArray1 = new  int[array.length];
         for (int i = 0; i < array.length; i++) {
             if (array[i] == value) {
-                for (int j = i; j < array.length - 1; j++) {
-                    newArray[j] = array[j+1];
-                }
-                break;
+                count ++;
+                continue;
             } else {
-                newArray[i] = array[i];
+                newArray1[index++] = array[i];
             }
         }
 
-        System.out.println(Arrays.toString(newArray));
+        int[] newArray2;
+        newArray2 = new int[array.length-count];
+
+        for (int i = 0; i < newArray2.length; i++) {
+            newArray2[i] = newArray1[i];
+        }
+
+        System.out.println(Arrays.toString(newArray2));
     }
+
 }
