@@ -1,6 +1,7 @@
 package demo;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class MaxMangHaiChieu {
     public static void main(String[] args) {
@@ -14,7 +15,32 @@ public class MaxMangHaiChieu {
                 }
             }
         }
+// Tổng 1 cột
+        System.out.println("max: " + max);
 
-        System.out.println(max);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập cột muốn tính tổng: ");
+        int k = scanner.nextInt();
+
+        int sum = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i][k];
+        }
+
+        System.out.println("Sum: " + sum);
+
+//Tổng đường chéo
+        int sum1 = 0;
+        int sum2 = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum1 += array[i][i];
+            sum2 += array[i][array.length - 1 - i];
+        }
+
+        System.out.println("Sum cheo 1: " + sum1);
+
+        System.out.println("Sum cheo 2: " + sum2);
+
     }
 }
